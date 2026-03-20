@@ -20,7 +20,7 @@ const songs = [
   { title: "青春修煉手冊", artist: "TFBOYS", tags: ["中文", "全糖甜心", "TFBOYS"] },
   { title: "love more", artist: "Bii 畢書盡", tags: ["中文", "全糖甜心", "Bii 畢書盡"] },
   { title: "whatever", artist: "PiXXiE", tags: ["中文", "全糖甜心", "PiXXiE"] },
-  { title: "不靈不靈", artist: "很美味", tags: ["中文", "全糖甜心", "新歌", "很美味"] },
+  { title: "不靈不靈", artist: "很美味", tags: ["中文", "全糖甜心", "很美味"] },
   { title: "有點甜", artist: "汪蘇瀧 / BY2", tags: ["中文", "全糖甜心", "汪蘇瀧", "BY2"] },
 
   // Emo (微苦心情)
@@ -41,8 +41,8 @@ const songs = [
   { title: "太陽與地球", artist: "盧廣仲", tags: ["中文", "微苦心情", "新歌", "盧廣仲"] },
   { title: "我還是愛著你", artist: "MP魔幻力量", tags: ["中文", "微苦心情", "MP魔幻力量"] },
   { title: "十二月的奇蹟", artist: "EXO", tags: ["中文", "微苦心情", "EXO"] },
-  { title: "每天在擔心", artist: "翁祥", tags: ["中文", "微苦心情", "新歌", "翁祥"] },
-  { title: "妥協", artist: "en", tags: ["中文", "微苦心情", "新歌", "en"] },
+  { title: "每天在擔心", artist: "翁祥", tags: ["中文", "微苦心情", "翁祥"] },
+  { title: "妥協", artist: "en", tags: ["中文", "微苦心情", "en"] },
 
   // 其他歌曲
   { title: "致愛", artist: "鹿晗", tags: ["中文", "鹿晗"] },
