@@ -70,7 +70,7 @@ const songs = [
   { title: "初雪", artist: "EXO", tags: ["韓文", "EXO"] },
   { title: "小幸運", artist: "田馥甄", tags: ["中文", "田馥甄"] },
   { title: "舅媽", artist: "巴大雄", tags: ["中文", "推薦", "巴大雄"] },
-  { title: "Without you", artist: "NCT", tags: ["韓文", "NCT"] }
+  { title: "Without you", artist: "NCT", tags: ["中文", "NCT"] }
 ];
 
 // 預定義的分類
