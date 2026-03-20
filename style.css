@@ -1,0 +1,747 @@
+/* ===== 全域重置 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 養樂多色系變數 ===== */
+:root {
+  --yakult-white: #FEFAF4;
+  --yakult-cream: #FFF5E0;
+  --yakult-light: #FDE8C8;
+  --yakult-peach: #F9C784;
+  --yakult-orange: #F4A44B;
+  --yakult-warm: #E8875A;
+  --yakult-pink: #F7B8A2;
+  --yakult-champagne: #F5DEB3;
+  --yakult-gold: #D4A843;
+  --yakult-text: #5C3D1E;
+  --yakult-text-light: #8B6340;
+  --yakult-shadow: rgba(212, 168, 67, 0.2);
+  --yakult-border: rgba(244, 164, 75, 0.3);
+  --card-bg: rgba(255, 250, 240, 0.92);
+  --btn-active: #F4A44B;
+  --btn-active-text: #fff;
+}
+
+/* ===== 背景 ===== */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(135deg, #FFF8EC 0%, #FDECD0 30%, #FBD9A8 60%, #F9C784 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--yakult-text);
+}
+
+/* ===== 香檳氣泡動畫 ===== */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -80px;
+  font-size: 1.4rem;
+  animation: floatUp linear infinite;
+  opacity: 0;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(100px) rotate(720deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUpLeft {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-100px) rotate(-720deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUpSway {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(-30vh) translateX(50px) rotate(180deg) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-60vh) translateX(-30px) rotate(360deg) scale(0.9);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(-90vh) translateX(40px) rotate(540deg) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(0) rotate(720deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ===== 主容器 ===== */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ===== 標題區 ===== */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  position: relative;
+}
+
+.champagne-deco {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  animation: sway 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.champagne-deco.left {
+  left: 0;
+  animation-delay: 0s;
+}
+
+.champagne-deco.right {
+  right: 0;
+  animation-delay: 1.5s;
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateY(-50%) rotate(-8deg); }
+  50% { transform: translateY(-50%) rotate(8deg); }
+}
+
+.site-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--yakult-text);
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 8px rgba(212, 168, 67, 0.4);
+  margin-bottom: 0.4rem;
+}
+
+.site-subtitle {
+  font-size: 1.1rem;
+  color: var(--yakult-text-light);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== 隨機歌曲按鈕 ===== */
+.random-song-btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(135deg, var(--yakult-peach), var(--yakult-orange));
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(244, 164, 75, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.random-song-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(244, 164, 75, 0.45);
+  background: linear-gradient(135deg, var(--yakult-orange), var(--yakult-warm));
+}
+
+.random-song-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(244, 164, 75, 0.3);
+}
+
+/* ===== 卡片容器 ===== */
+.card-container {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 8px 40px var(--yakult-shadow), 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--yakult-border);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== 搜尋列 ===== */
+.search-row {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-row input {
+  width: 100%;
+  padding: 0.8rem 3rem 0.8rem 1.2rem;
+  border: 2px solid var(--yakult-border);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  color: var(--yakult-text);
+  font-family: 'Noto Sans TC', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-row input:focus {
+  border-color: var(--yakult-orange);
+  box-shadow: 0 0 0 3px rgba(244, 164, 75, 0.15);
+}
+
+.search-row input::placeholder {
+  color: var(--yakult-text-light);
+  opacity: 0.6;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* ===== 篩選區 ===== */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--yakult-text-light);
+  background: var(--yakult-light);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  margin-top: 0.1rem;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--yakult-border);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-btn {
+  padding: 0.3rem 0.85rem;
+  border: 1.5px solid var(--yakult-peach);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--yakult-text);
+  font-size: 0.82rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-weight: 400;
+}
+
+.filter-btn:hover {
+  background: var(--yakult-light);
+  border-color: var(--yakult-orange);
+  color: var(--yakult-text);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(244, 164, 75, 0.2);
+}
+
+.filter-btn.active {
+  background: var(--yakult-orange);
+  border-color: var(--yakult-orange);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(244, 164, 75, 0.4);
+}
+
+/* ===== 已選篩選列 ===== */
+.active-filters-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  background: rgba(253, 232, 200, 0.5);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--yakult-border);
+  min-height: 2.4rem;
+}
+
+.active-filters-label {
+  font-size: 0.82rem;
+  color: var(--yakult-text-light);
+  flex: 1;
+}
+
+.clear-btn {
+  padding: 0.25rem 0.8rem;
+  border: 1.5px solid var(--yakult-warm);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--yakult-warm);
+  font-size: 0.78rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.clear-btn:hover {
+  background: var(--yakult-warm);
+  color: #fff;
+}
+
+/* ===== 歌曲數量 ===== */
+.song-count {
+  font-size: 0.85rem;
+  color: var(--yakult-text-light);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+/* ===== 歌單格子 ===== */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.9rem;
+}
+
+/* ===== 歌曲卡片 ===== */
+.song-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(253,236,208,0.7) 100%);
+  border: 1.5px solid var(--yakult-border);
+  border-radius: 16px;
+  padding: 1rem 1rem 0.8rem;
+  cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.3s ease both;
+}
+
+.song-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yakult-peach), var(--yakult-orange), var(--yakult-warm));
+  border-radius: 16px 16px 0 0;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(244, 164, 75, 0.25);
+  border-color: var(--yakult-orange);
+}
+
+.song-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--yakult-text);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.song-artist {
+  font-size: 0.78rem;
+  color: var(--yakult-text-light);
+  margin-bottom: 0.55rem;
+  font-weight: 400;
+}
+
+.song-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.song-tag {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.song-tag.tag-推薦 {
+  background: rgba(244, 164, 75, 0.2);
+  color: #C07A1A;
+  border: 1px solid rgba(244, 164, 75, 0.4);
+}
+
+.song-tag.tag-新歌 {
+  background: rgba(232, 135, 90, 0.15);
+  color: #B85A2A;
+  border: 1px solid rgba(232, 135, 90, 0.35);
+}
+
+.song-tag.tag-中文 {
+  background: rgba(253, 232, 200, 0.8);
+  color: #8B6340;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+}
+
+.song-tag.tag-台語 {
+  background: rgba(247, 184, 162, 0.3);
+  color: #A0522D;
+  border: 1px solid rgba(247, 184, 162, 0.5);
+}
+
+.song-tag.tag-韓文 {
+  background: rgba(245, 222, 179, 0.5);
+  color: #8B6914;
+  border: 1px solid rgba(212, 168, 67, 0.4);
+}
+
+.song-tag.tag-artist {
+  background: rgba(255, 245, 224, 0.9);
+  color: var(--yakult-text-light);
+  border: 1px solid var(--yakult-border);
+}
+
+/* ===== 無結果提示 ===== */
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--yakult-text-light);
+  font-size: 1rem;
+  grid-column: 1 / -1;
+}
+
+.no-results .emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== 分隔線 ===== */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--yakult-border), transparent);
+  margin: 1rem 0;
+}
+
+/* ===== 響應式 ===== */
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 2rem;
+  }
+  .card-container {
+    padding: 1.2rem 1rem;
+  }
+  .song-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .champagne-deco {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== 滾動條美化 ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--yakult-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--yakult-peach);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--yakult-orange);
+}
+
+/* ===== 頁腳 ===== */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  color: var(--yakult-text-light);
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+/* ===== 卡片進入動畫 ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.song-card:nth-child(1) { animation-delay: 0.02s; }
+.song-card:nth-child(2) { animation-delay: 0.04s; }
+.song-card:nth-child(3) { animation-delay: 0.06s; }
+.song-card:nth-child(4) { animation-delay: 0.08s; }
+.song-card:nth-child(5) { animation-delay: 0.10s; }
+.song-card:nth-child(6) { animation-delay: 0.12s; }
+.song-card:nth-child(7) { animation-delay: 0.14s; }
+.song-card:nth-child(8) { animation-delay: 0.16s; }
+
+/* ===== 標題淡入動畫 ===== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.site-title {
+  animation: fadeInDown 0.6s ease both;
+}
+
+.site-subtitle {
+  animation: fadeInDown 0.6s ease 0.15s both;
+}
+
+/* ===== 面包屑光效果 ===== */
+.card-container {
+  position: relative;
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--yakult-gold), transparent);
+  border-radius: 2px;
+}
+
+/* ===== 按鈕派對分隔線 ===== */
+.filter-section .filter-group:not(:last-child) {
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed rgba(244, 164, 75, 0.2);
+}
+
+/* ===== 隨機歌曲彈出視窗 ===== */
+.random-song-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.random-song-modal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.random-song-content {
+  background: linear-gradient(135deg, var(--yakult-cream) 0%, var(--yakult-light) 100%);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--yakult-border);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.random-song-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.random-song-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--yakult-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.random-song-artist {
+  font-size: 1rem;
+  color: var(--yakult-text-light);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.random-song-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.random-song-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.random-song-tag.tag-推薦 {
+  background: rgba(244, 164, 75, 0.2);
+  color: #C07A1A;
+  border: 1px solid rgba(244, 164, 75, 0.4);
+}
+
+.random-song-tag.tag-新歌 {
+  background: rgba(232, 135, 90, 0.15);
+  color: #B85A2A;
+  border: 1px solid rgba(232, 135, 90, 0.35);
+}
+
+.random-song-tag.tag-中文 {
+  background: rgba(253, 232, 200, 0.8);
+  color: #8B6340;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+}
+
+.random-song-tag.tag-台語 {
+  background: rgba(247, 184, 162, 0.3);
+  color: #A0522D;
+  border: 1px solid rgba(247, 184, 162, 0.5);
+}
+
+.random-song-tag.tag-韓文 {
+  background: rgba(245, 222, 179, 0.5);
+  color: #8B6914;
+  border: 1px solid rgba(212, 168, 67, 0.4);
+}
+
+.random-song-buttons {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.random-song-btn-next {
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, var(--yakult-peach), var(--yakult-orange));
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.random-song-btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 164, 75, 0.3);
+}
+
+.random-song-btn-close {
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1.5px solid var(--yakult-text-light);
+  border-radius: 20px;
+  color: var(--yakult-text-light);
+  font-size: 0.9rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.random-song-btn-close:hover {
+  background: var(--yakult-light);
+  border-color: var(--yakult-text);
+  color: var(--yakult-text);
+}
