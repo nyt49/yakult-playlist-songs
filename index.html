@@ -20,7 +20,7 @@
       <div class="champagne-deco left">🥂</div>
       <h1 class="site-title">樂多的歌單</h1>
       <p class="site-subtitle">養樂多嗎🥂</p>
-      <button class="random-song-btn" id="randomSongBtn" title="隨機播放一首歌">🎲 隨機歌曲</button>
+      <button class="random-song-btn" id="randomSongBtn" title="隨機播放一首歌">🎲 隨機一首</button>
       <div class="champagne-deco right">🥂</div>
     </header>
 
@@ -33,6 +33,13 @@
 
       <!-- 篩選按鈕區 -->
       <div class="filter-section">
+        <div class="filter-group">
+          <span class="filter-label">氛圍</span>
+          <div class="filter-buttons" id="moodButtons">
+            <button class="filter-btn" data-tag="全糖甜心">全糖甜心</button>
+            <button class="filter-btn" data-tag="微苦心情">微苦心情</button>
+          </div>
+        </div>
         <div class="filter-group">
           <span class="filter-label">分類</span>
           <div class="filter-buttons" id="categoryButtons">
@@ -51,7 +58,7 @@
         <div class="filter-group">
           <span class="filter-label">歌手</span>
           <div class="filter-buttons" id="artistButtons">
-            <!-- 動態生成 -->
+            <!-- 由 JS 動態生成 -->
           </div>
         </div>
       </div>
