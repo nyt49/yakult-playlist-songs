@@ -1,5 +1,5 @@
 const songs = [
-  // 甜歌 (甜歌)
+  // 甜歌
   { title: "心花開", artist: "李千娜", tags: ["台語", "甜歌", "李千娜"] },
   { title: "Mr.Chu", artist: "Apink", tags: ["韓文", "甜歌", "Apink"] },
   { title: "寵愛", artist: "TFBOYS", tags: ["中文", "甜歌", "推薦", "TFBOYS"] },
@@ -14,7 +14,7 @@ const songs = [
   { title: "一笑傾城", artist: "汪蘇瀧", tags: ["中文", "甜歌", "汪蘇瀧"] },
   { title: "愛情闖進門", artist: "BY2", tags: ["中文", "甜歌", "BY2"] },
   { title: "淋雨一直走", artist: "張韶涵", tags: ["中文", "甜歌", "張韶涵"] },
-  { title: "七彩的微風", artist: "真珠美人魚", tags: ["中文", "甜歌", "真珠美人魚"] },
+  { title: "七彩的微風", artist: "真珠美人魚", tags: ["中文", "甜歌", "推薦", "真珠美人魚"] },
   { title: "戀愛ing", artist: "五月天", tags: ["中文", "甜歌", "五月天"] },
   { title: "Honey", artist: "郭書瑤", tags: ["中文", "甜歌", "郭書瑤"] },
   { title: "青春修煉手冊", artist: "TFBOYS", tags: ["中文", "甜歌", "TFBOYS"] },
@@ -22,8 +22,9 @@ const songs = [
   { title: "whatever", artist: "PiXXiE", tags: ["中文", "甜歌", "PiXXiE"] },
   { title: "不靈不靈", artist: "很美味", tags: ["中文", "甜歌", "很美味"] },
   { title: "有點甜", artist: "汪蘇瀧 / BY2", tags: ["中文", "甜歌", "汪蘇瀧", "BY2"] },
+  { title: "愛ㄚ愛ㄚ", artist: "BY2", tags: ["中文", "甜歌", "BY2"] },
 
-  // Emo (Emo)
+  // Emo
   { title: "座位", artist: "姚曉棠", tags: ["中文", "Emo", "姚曉棠"] },
   { title: "唯一", artist: "告五人", tags: ["中文", "Emo", "告五人"] },
   { title: "囂張", artist: "en", tags: ["中文", "Emo", "en"] },
@@ -35,14 +36,18 @@ const songs = [
   { title: "時間煮雨", artist: "郁可唯", tags: ["中文", "Emo", "郁可唯"] },
   { title: "為心導航", artist: "EXO", tags: ["中文", "Emo", "EXO"] },
   { title: "百年孤寂", artist: "王菲", tags: ["中文", "Emo", "王菲"] },
-  { title: "我喜歡你", artist: "芒果醬", tags: ["台語", "Emo", "新歌", "芒果醬"] },
+  { title: "我喜歡你", artist: "芒果醬", tags: ["台語", "Emo", "芒果醬"] },
   { title: "我們的明天", artist: "鹿晗", tags: ["中文", "Emo", "鹿晗"] },
   { title: "你懂不懂我", artist: "BY2", tags: ["中文", "Emo", "BY2"] },
-  { title: "太陽與地球", artist: "盧廣仲", tags: ["中文", "Emo", "新歌", "盧廣仲"] },
+  { title: "太陽與地球", artist: "盧廣仲", tags: ["中文", "Emo", "盧廣仲"] },
   { title: "我還是愛著你", artist: "MP魔幻力量", tags: ["中文", "Emo", "MP魔幻力量"] },
   { title: "十二月的奇蹟", artist: "EXO", tags: ["中文", "Emo", "EXO"] },
   { title: "每天在擔心", artist: "翁祥", tags: ["中文", "Emo", "翁祥"] },
   { title: "妥協", artist: "en", tags: ["中文", "Emo", "en"] },
+  { title: "座位", artist: "姚曉棠", tags: ["中文", "Emo", "姚曉棠"] },
+  { title: "如果可以", artist: "韋禮安", tags: ["中文", "Emo", "韋禮安"] },
+  { title: "介意", artist: "白峻嘉", tags: ["中文", "Emo", "白峻嘉"] },
+  { title: "沒理由", artist: "BY2", tags: ["中文", "Emo", "BY2"] },
 
   // 其他歌曲
   { title: "致愛", artist: "鹿晗", tags: ["中文", "鹿晗"] },
@@ -55,14 +60,17 @@ const songs = [
   { title: "歐若拉", artist: "張韶涵", tags: ["中文", "張韶涵"] },
   { title: "你並不懂我", artist: "BY2", tags: ["中文", "BY2"] },
   { title: "新少女祈禱", artist: "BY2", tags: ["中文", "BY2"] },
-  { title: "你不會一輩子的愛上我", artist: "Tyson Yoshi", tags: ["中文", "Tyson Yoshi"] },
+  { title: "你不會一輩子的愛上我", artist: "Tyson Yoshi", tags: ["中文", "推薦", "Tyson Yoshi"] },
   { title: "有沒有", artist: "BY2", tags: ["中文", "BY2"] },
   { title: "無垢", artist: "李浩瑋", tags: ["中文", "新歌", "李浩瑋"] },
   { title: "真心話", artist: "李浩瑋", tags: ["中文", "新歌", "李浩瑋"] },
   { title: "星空", artist: "五月天", tags: ["中文", "五月天"] },
-  { title: "天機", artist: "MP魔幻力量 / 阿信", tags: ["中文", "MP魔幻力量", "五月天"] }, // 阿信歸類到五月天
+  { title: "天機", artist: "MP魔幻力量 / 阿信", tags: ["中文", "MP魔幻力量", "五月天"] },
   { title: "勢在必行", artist: "陳勢安 / 畢書盡", tags: ["中文", "陳勢安", "畢書盡"] },
-  { title: "初雪", artist: "EXO", tags: ["韓文", "EXO"] }
+  { title: "初雪", artist: "EXO", tags: ["韓文", "EXO"] },
+  { title: "小幸運", artist: "田馥甄", tags: ["中文", "田馥甄"] },
+  { title: "舅媽", artist: "巴大雄", tags: ["中文", "推薦", "巴大雄"] },
+  { title: "Without you", artist: "NCT", tags: ["韓文", "NCT"] }
 ];
 
 // 預定義的分類
