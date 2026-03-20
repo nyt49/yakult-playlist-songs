@@ -1,95 +1,74 @@
 // ===== 歌單資料 =====
 const songs = [
-  { title: "愛ㄚ愛ㄚ", artist: "BY2", tags: ["中文", "BY2"] },
+  // 甜歌 (全糖甜心)
+  { title: "心花開", artist: "李千娜", tags: ["台語", "全糖甜心"] },
+  { title: "Mr.Chu", artist: "Apink", tags: ["韓文", "全糖甜心"] },
+  { title: "寵愛", artist: "TFBOYS", tags: ["中文", "全糖甜心", "推薦"] },
+  { title: "女孩", artist: "韋禮安", tags: ["中文", "全糖甜心", "韋禮安"] },
+  { title: "泡泡糖", artist: "NCT", tags: ["中文", "全糖甜心", "NCT"] },
+  { title: "湊熱鬧", artist: "BY2", tags: ["中文", "全糖甜心", "BY2"] },
+  { title: "喜歡你", artist: "陳潔怡", tags: ["中文", "全糖甜心"] },
+  { title: "日不落", artist: "蔡依林", tags: ["中文", "全糖甜心", "推薦"] },
+  { title: "愛不釋手", artist: "NCT", tags: ["中文", "全糖甜心", "NCT"] },
+  { title: "蝴蝶少女", artist: "EXO", tags: ["中文", "全糖甜心", "EXO", "推薦"] },
+  { title: "告白氣球", artist: "周杰倫", tags: ["中文", "全糖甜心"] },
+  { title: "一笑傾城", artist: "汪蘇瀧", tags: ["中文", "全糖甜心", "汪蘇瀧"] },
+  { title: "愛情闖進門", artist: "BY2", tags: ["中文", "全糖甜心", "BY2"] },
+  { title: "淋雨一直走", artist: "張韶涵", tags: ["中文", "全糖甜心", "張韶涵"] },
+  { title: "七彩的微風", artist: "真珠美人魚", tags: ["中文", "全糖甜心"] },
+  { title: "戀愛ing", artist: "五月天", tags: ["中文", "全糖甜心", "五月天"] },
+  { title: "Honey", artist: "郭書瑤", tags: ["中文", "全糖甜心"] },
+  { title: "青春修煉手冊", artist: "TFBOYS", tags: ["中文", "全糖甜心"] },
+  { title: "love more", artist: "Bii 畢書盡", tags: ["中文", "全糖甜心"] },
+  { title: "whatever", artist: "PiXXiE", tags: ["中文", "全糖甜心"] },
+  { title: "不靈不靈", artist: "很美味", tags: ["中文", "全糖甜心", "新歌"] },
+
+  // Emo (微苦心情)
+  { title: "座位", artist: "姚曉棠", tags: ["中文", "微苦心情"] },
+  { title: "唯一", artist: "告五人", tags: ["中文", "微苦心情"] },
+  { title: "囂張", artist: "en", tags: ["中文", "微苦心情"] },
+  { title: "童話", artist: "光良", tags: ["中文", "微苦心情"] },
+  { title: "雨愛", artist: "楊丞琳", tags: ["中文", "微苦心情"] },
+  { title: "我看過", artist: "周星星", tags: ["中文", "微苦心情"] },
+  { title: "想見你", artist: "八三夭", tags: ["中文", "微苦心情"] },
+  { title: "這時煙火", artist: "NCT", tags: ["中文", "微苦心情", "NCT"] },
+  { title: "時間煮雨", artist: "郁可唯", tags: ["中文", "微苦心情"] },
+  { title: "為心導航", artist: "EXO", tags: ["中文", "微苦心情", "EXO"] },
+  { title: "百年孤寂", artist: "王菲", tags: ["中文", "微苦心情"] },
+  { title: "我喜歡你", artist: "芒果醬", tags: ["台語", "微苦心情", "新歌"] },
+  { title: "我們的明天", artist: "鹿晗", tags: ["中文", "微苦心情", "鹿晗"] },
+  { title: "你懂不懂我", artist: "BY2", tags: ["中文", "微苦心情", "BY2"] },
+  { title: "太陽與地球", artist: "盧廣仲", tags: ["中文", "微苦心情", "新歌"] },
+  { title: "我還是愛著你", artist: "MP魔幻力量", tags: ["中文", "微苦心情", "MP魔幻力量"] },
+  { title: "十二月的奇蹟", artist: "EXO", tags: ["中文", "微苦心情", "EXO"] },
+  { title: "每天在擔心", artist: "翁祥", tags: ["中文", "微苦心情"] },
+  { title: "妥協", artist: "en", tags: ["中文", "微苦心情"] },
+
+  // 其他歌曲
   { title: "致愛", artist: "鹿晗", tags: ["中文", "鹿晗"] },
-  { title: "我們的明天", artist: "鹿晗", tags: ["中文", "鹿晗"] },
-  { title: "淋雨一直走", artist: "張韶涵", tags: ["中文", "張韶涵"] },
-  { title: "愛情闖進門", artist: "BY2", tags: ["中文", "BY2"] },
-  { title: "Mr.Chu", artist: "Apink", tags: ["韓文"] },
   { title: "離開的一路上", artist: "理想混蛋", tags: ["中文"] },
-  { title: "告白氣球", artist: "周杰倫", tags: ["中文"] },
-  { title: "有點甜", artist: "汪蘇瀧 / BY2", tags: ["中文", "BY2", "汪蘇瀧"] },
-  { title: "七彩的微風", artist: "真珠美人魚", tags: ["中文", "推薦"] },
-  { title: "天空海", artist: "威神V", tags: ["中文", "威神V"] },
-  { title: "愛不釋手", artist: "威神V", tags: ["中文", "威神V"] },
-  { title: "這時煙火", artist: "威神V", tags: ["中文", "威神V"] },
-  { title: "泡泡糖", artist: "NCT DREAM", tags: ["中文", "NCT DREAM"] },
-  { title: "Love More", artist: "Bii 畢書盡", tags: ["中文"] },
+  { title: "天空海", artist: "NCT", tags: ["中文", "NCT"] },
   { title: "我們青春", artist: "李玉璽", tags: ["中文", "李玉璽"] },
   { title: "小城夏天", artist: "LBI利比", tags: ["中文"] },
-  { title: "時間煮雨", artist: "郁可唯", tags: ["中文"] },
-  { title: "一笑傾城", artist: "汪蘇瀧", tags: ["中文", "汪蘇瀧"] },
-  { title: "寵愛", artist: "TFBOYS", tags: ["中文", "TFBOYS"] },
-  { title: "青春修煉手冊", artist: "TFBOYS", tags: ["中文", "TFBOYS"] },
-  { title: "我看過", artist: "周星星", tags: ["中文"] },
-  { title: "女孩", artist: "韋禮安", tags: ["中文", "韋禮安"] },
-  { title: "戀愛ing", artist: "五月天", tags: ["中文", "五月天"] },
-  { title: "Honey", artist: "郭書瑤", tags: ["中文"] },
-  { title: "Whatever", artist: "PiXXiE", tags: ["中文"] },
-  { title: "座位", artist: "姚曉棠", tags: ["中文"] },
-  { title: "我還是愛著你", artist: "MP魔幻力量", tags: ["中文", "MP魔幻力量"] },
-  { title: "想見你", artist: "八三夭", tags: ["中文"] },
-  { title: "如果可以", artist: "韋禮安", tags: ["中文", "韋禮安"] },
-  { title: "Beatbox", artist: "NCT DREAM", tags: ["韓文", "NCT DREAM"] },
-  { title: "湊熱鬧", artist: "BY2", tags: ["中文", "BY2"] },
-  { title: "喜歡你", artist: "陳潔怡", tags: ["中文"] },
-  { title: "十二月的奇蹟", artist: "EXO", tags: ["中文", "EXO"] },
-  { title: "Without you", artist: "NCT U", tags: ["韓文", "NCT DREAM"] },
-  { title: "蝴蝶少女", artist: "EXO", tags: ["中文", "EXO"] },
-  { title: "為心導航", artist: "EXO", tags: ["中文", "EXO"] },
-  { title: "唯一", artist: "告五人", tags: ["中文"] },
+  { title: "Beatbox", artist: "NCT", tags: ["韓文", "NCT"] },
   { title: "彼得潘", artist: "EXO", tags: ["中文", "EXO"] },
   { title: "歐若拉", artist: "張韶涵", tags: ["中文", "張韶涵"] },
   { title: "你並不懂我", artist: "BY2", tags: ["中文", "BY2"] },
   { title: "新少女祈禱", artist: "BY2", tags: ["中文", "BY2"] },
   { title: "你不會一輩子的愛上我", artist: "Tyson Yoshi", tags: ["中文"] },
-  { title: "百年孤寂", artist: "王菲", tags: ["中文"] },
-  { title: "日不落", artist: "蔡依林", tags: ["中文"] },
-  { title: "囂張", artist: "en", tags: ["中文"] },
   { title: "有沒有", artist: "BY2", tags: ["中文", "BY2"] },
   { title: "無垢", artist: "李浩瑋", tags: ["中文", "新歌", "李浩瑋"] },
   { title: "真心話", artist: "李浩瑋", tags: ["中文", "新歌", "李浩瑋"] },
-  { title: "小幸運", artist: "田馥甄", tags: ["中文"] },
   { title: "星空", artist: "五月天", tags: ["中文", "五月天"] },
-  { title: "童話", artist: "光良", tags: ["中文"] },
   { title: "天機", artist: "MP魔幻力量 / 阿信", tags: ["中文", "MP魔幻力量"] },
   { title: "勢在必行", artist: "陳勢安 / 畢書盡", tags: ["中文"] },
-  { title: "初雪", artist: "EXO", tags: ["韓文", "EXO"] },
-  { title: "心花開", artist: "李千娜", tags: ["台語"] },
-  { title: "介意", artist: "白峻嘉", tags: ["中文"] },
-  { title: "太陽與地球", artist: "盧廣仲", tags: ["中文"] },
-  { title: "我喜歡你", artist: "芒果醬", tags: ["台語", "新歌"] },
-  { title: "沒理由", artist: "BY2", tags: ["中文", "BY2"] },
-  { title: "雨愛", artist: "楊丞琳", tags: ["中文"] },
-  { title: "舅媽", artist: "巴大雄", tags: ["中文", "推薦"] }
+  { title: "初雪", artist: "EXO", tags: ["韓文", "EXO"] }
 ];
 
-// ===== 計算所有歌手出現次數 =====
-function getAllArtists() {
-  const artistCount = {};
-  songs.forEach(song => {
-    song.tags.forEach(tag => {
-      const nonArtistTags = ["中文", "台語", "韓文", "推薦", "新歌"];
-      if (!nonArtistTags.includes(tag)) {
-        artistCount[tag] = (artistCount[tag] || 0) + 1;
-      }
-    });
-  });
-  return Object.entries(artistCount)
-    .sort((a, b) => b[1] - a[1])
-    .map(([name, count]) => ({ name, count }));
-}
-
-// ===== 分離為 3 首以上的歌手和其他歌手 =====
-function getArtistsByCategory() {
-  const all = getAllArtists();
-  const popular = all.filter(a => a.count >= 3);
-  const others = all.filter(a => a.count < 3);
-  return { popular, others };
-}
-
-// ===== 狀態：歌手選單是否展開 =====
-let artistMenuExpanded = false;
+// 預定義的分類
+const MOOD_TAGS = ["全糖甜心", "微苦心情"];
+const CAT_TAGS = ["推薦", "新歌"];
+const LANG_TAGS = ["中文", "台語", "韓文"];
 
 // ===== 狀態 =====
 let activeTags = new Set();
@@ -103,9 +82,14 @@ const searchInput = document.getElementById("searchInput");
 const activeFiltersLabel = document.getElementById("activeFiltersLabel");
 const bubblesContainer = document.getElementById("bubblesContainer");
 
+const moodButtonsContainer = document.getElementById("moodButtons");
+const categoryButtonsContainer = document.getElementById("categoryButtons");
+const languageButtonsContainer = document.getElementById("languageButtons");
+const artistButtonsContainer = document.getElementById("artistButtons");
+
 // ===== 建立香檳泡泡背景 =====
 function createBubbles() {
-  const emojis = ["🥂", "🥂", "🥂", "✨", "🫧", "🥂"];
+  const emojis = ["🥂", "✨", "🫧"];
   const animations = ["floatUp", "floatUpLeft", "floatUpSway"];
   const count = 25;
   for (let i = 0; i < count; i++) {
@@ -122,71 +106,76 @@ function createBubbles() {
   }
 }
 
-// ===== 建立歌手篩選按鈕 =====
-function buildArtistButtons() {
-  const { popular, others } = getArtistsByCategory();
-  const container = document.getElementById("artistButtons");
-  container.innerHTML = "";
-  
-  // 添加熱門歌手按鈕
-  popular.forEach(({ name, count }) => {
-    const btn = document.createElement("button");
-    btn.classList.add("filter-btn", "artist-btn");
-    btn.dataset.tag = name;
-    btn.textContent = `${name} (${count})`;
-    container.appendChild(btn);
+// ===== 取得過濾後的歌曲清單 =====
+function getFilteredSongs() {
+  return songs.filter(song => {
+    const tagMatch = activeTags.size === 0 || [...activeTags].every(tag => song.tags.includes(tag));
+    const q = searchQuery.trim().toLowerCase();
+    const searchMatch = !q || song.title.toLowerCase().includes(q) || song.artist.toLowerCase().includes(q);
+    return tagMatch && searchMatch;
   });
-  
-  // 如果有其他歌手，添加折疊按鈕
-  if (others.length > 0) {
-    const toggleBtn = document.createElement("button");
-    toggleBtn.classList.add("filter-btn", "toggle-artists-btn");
-    toggleBtn.textContent = `⬇ 顯示更多 (${others.length})`;
-    toggleBtn.id = "toggleArtistsBtn";
-    container.appendChild(toggleBtn);
-    
-    // 折疊按鈕的按下事件
-    toggleBtn.addEventListener("click", toggleArtistMenu);
-  }
 }
 
-// ===== 切換歌手選單的展開狀態 =====
-function toggleArtistMenu() {
-  const { popular, others } = getArtistsByCategory();
-  const container = document.getElementById("artistButtons");
-  const toggleBtn = document.getElementById("toggleArtistsBtn");
+// ===== 建立/更新篩選按鈕 =====
+function renderFilters() {
+  const filteredSongs = getFilteredSongs();
   
-  if (artistMenuExpanded) {
-    // 收起其他歌手
-    container.querySelectorAll(".artist-btn.hidden").forEach(btn => btn.remove());
-    toggleBtn.textContent = `⬇ 顯示更多 (${others.length})`;
-    artistMenuExpanded = false;
-  } else {
-    // 展開其他歌手
-    others.forEach(({ name, count }) => {
-      const btn = document.createElement("button");
-      btn.classList.add("filter-btn", "artist-btn", "hidden");
-      btn.dataset.tag = name;
-      btn.textContent = `${name} (${count})`;
-      // 必須為動態生成的按鈕綁定點擊事件
-      btn.addEventListener("click", () => toggleTag(name, btn));
-      container.insertBefore(btn, toggleBtn);
+  // 計算目前過濾結果中，各個標籤出現的次數
+  const counts = {};
+  filteredSongs.forEach(song => {
+    song.tags.forEach(t => {
+      counts[t] = (counts[t] || 0) + 1;
     });
-    toggleBtn.textContent = `⬆ 隨收 (${others.length})`;
-    artistMenuExpanded = true;
-  }
+  });
+
+  // 更新 氛圍、分類、語言 按鈕
+  updateButtonGroup(moodButtonsContainer, MOOD_TAGS, counts);
+  updateButtonGroup(categoryButtonsContainer, CAT_TAGS, counts);
+  updateButtonGroup(languageButtonsContainer, LANG_TAGS, counts);
+
+  // 更新 歌手 按鈕 (動態生成)
+  const allArtistTags = Array.from(new Set(songs.flatMap(s => s.tags)))
+    .filter(t => !MOOD_TAGS.includes(t) && !CAT_TAGS.includes(t) && !LANG_TAGS.includes(t) && t !== "") // 確保過濾掉空字串標籤
+    .sort();
+  
+  updateButtonGroup(artistButtonsContainer, allArtistTags, counts);
+}
+
+function updateButtonGroup(container, tagList, counts) {
+  container.innerHTML = "";
+  tagList.forEach(tag => {
+    const count = counts[tag] || 0;
+    const btn = document.createElement("button");
+    btn.className = `filter-btn ${activeTags.has(tag) ? 'active' : ''}`;
+    btn.dataset.tag = tag;
+    btn.textContent = `${tag} (${count})`;
+    if (count === 0 && !activeTags.has(tag)) {
+        btn.style.opacity = "0.5";
+    }
+    container.appendChild(btn);
+  });
 }
 
 // ===== 切換標籤 =====
-function toggleTag(tag, btn) {
-  if (activeTags.has(tag)) {
-    activeTags.delete(tag);
-    btn.classList.remove("active");
+function toggleTag(tag) {
+  if (MOOD_TAGS.includes(tag)) {
+    // 如果點擊的是氛圍標籤，則清除所有其他標籤，只保留或切換此氛圍標籤
+    if (activeTags.has(tag) && activeTags.size === 1) {
+      activeTags.clear(); // 如果已經選中且是唯一標籤，則取消選中
+    } else {
+      activeTags.clear(); // 清除所有其他標籤
+      activeTags.add(tag); // 選中當前氛圍標籤
+    }
   } else {
-    activeTags.add(tag);
-    btn.classList.add("active");
+    // 對於其他標籤，正常切換
+    if (activeTags.has(tag)) {
+      activeTags.delete(tag);
+    } else {
+      activeTags.add(tag);
+    }
   }
   renderSongs();
+  renderFilters();
   updateActiveFiltersLabel();
 }
 
@@ -208,16 +197,7 @@ function updateActiveFiltersLabel() {
 
 // ===== 渲染歌單 =====
 function renderSongs() {
-  let filtered = songs.filter(song => {
-    // 標籤篩選（AND 邏輯）
-    const tagMatch = activeTags.size === 0 || [...activeTags].every(tag => song.tags.includes(tag));
-    // 搜尋篩選
-    const q = searchQuery.trim().toLowerCase();
-    const searchMatch = !q || song.title.toLowerCase().includes(q) || song.artist.toLowerCase().includes(q);
-    return tagMatch && searchMatch;
-  });
-  
-  // 按照歌名長度從短到長排序
+  const filtered = getFilteredSongs();
   filtered.sort((a, b) => a.title.length - b.title.length);
 
   songCount.textContent = `共 ${filtered.length} 首歌曲`;
@@ -232,18 +212,15 @@ function renderSongs() {
   }
 
   songGrid.innerHTML = filtered.map(song => {
-    const displayTags = song.tags.filter(t => {
-      const nonArtistTags = ["中文", "台語", "韓文", "推薦", "新歌"];
-      return nonArtistTags.includes(t);
-    });
-
-    const tagHTML = displayTags.map(tag => {
-      return `<span class="song-tag tag-${tag}">${tag}</span>`;
-    }).join("");
+    const displayTags = song.tags.filter(t => [...MOOD_TAGS, ...CAT_TAGS, ...LANG_TAGS].includes(t));
+    const tagHTML = displayTags.map(tag => `<span class="song-tag tag-${tag}">${tag}</span>`).join("");
 
     return `
       <div class="song-card">
-        <div class="song-title">${escapeHTML(song.title)}</div>
+        <div class="song-title-container">
+          <div class="song-title">${escapeHTML(song.title)}</div>
+          <button class="copy-btn" title="複製歌名" data-song="${escapeHTML(song.title)}">📋</button>
+        </div>
         <div class="song-artist">${escapeHTML(song.artist)}</div>
         <div class="song-tags">${tagHTML}</div>
       </div>`;
@@ -254,36 +231,30 @@ function renderSongs() {
 function escapeHTML(str) {
   return str
     .replace(/&/g, "&amp;")
+    .replace(/\[/g, "&#91;")
+    .replace(/\]/g, "&#93;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
 
-// ===== 綁定所有篩選按鈕（使用事件委派） =====
-function bindFilterButtons() {
-  // 固定按鈕：分類 & 語言
-  document.getElementById("categoryButtons").addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (btn) toggleTag(btn.dataset.tag, btn);
-  });
-  document.getElementById("languageButtons").addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (btn) toggleTag(btn.dataset.tag, btn);
-  });
-  // 歌手按鈕（動態生成）
-  document.getElementById("artistButtons").addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (btn) toggleTag(btn.dataset.tag, btn);
-  });
-}
+// ===== 監聽篩選按鈕點擊 (委派) =====
+[moodButtonsContainer, categoryButtonsContainer, languageButtonsContainer, artistButtonsContainer].forEach(container => {
+    container.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
+        if (btn) {
+            toggleTag(btn.dataset.tag);
+        }
+    });
+});
 
 // ===== 清除篩選 =====
 clearBtn.addEventListener("click", () => {
   activeTags.clear();
   searchQuery = "";
   searchInput.value = "";
-  document.querySelectorAll(".filter-btn.active").forEach(btn => btn.classList.remove("active"));
   renderSongs();
+  renderFilters();
   updateActiveFiltersLabel();
 });
 
@@ -291,6 +262,7 @@ clearBtn.addEventListener("click", () => {
 searchInput.addEventListener("input", (e) => {
   searchQuery = e.target.value;
   renderSongs();
+  renderFilters();
   updateActiveFiltersLabel();
 });
 
@@ -310,42 +282,47 @@ function displayRandomSong(song) {
   
   const tagsContainer = document.getElementById("randomSongTags");
   tagsContainer.innerHTML = song.tags
-    .filter(tag => ["中文", "台語", "韓文", "推薦", "新歌"].includes(tag))
-    .map(tag => {
-      const tagLabel = tag === "新歌" ? "新歌 🆕" : tag;
-      return `<span class="random-song-tag tag-${tag}">${tagLabel}</span>`;
-    })
+    .filter(tag => [...MOOD_TAGS, ...CAT_TAGS, ...LANG_TAGS].includes(tag))
+    .map(tag => `<span class="random-song-tag tag-${tag}">${tag}</span>`)
     .join("");
   
   randomSongModal.classList.add("active");
 }
 
 randomSongBtn.addEventListener("click", () => {
-  const randomSong = getRandomSong();
-  displayRandomSong(randomSong);
+  displayRandomSong(getRandomSong());
 });
 
 randomSongBtnNext.addEventListener("click", () => {
-  const randomSong = getRandomSong();
-  displayRandomSong(randomSong);
+  displayRandomSong(getRandomSong());
 });
 
 randomSongBtnClose.addEventListener("click", () => {
   randomSongModal.classList.remove("active");
 });
 
-// 點擊背景關閉
 randomSongModal.addEventListener("click", (e) => {
-  if (e.target === randomSongModal) {
-    randomSongModal.classList.remove("active");
-  }
+  if (e.target === randomSongModal) randomSongModal.classList.remove("active");
+});
+
+// ===== 設定複製功能 (委派) =====
+document.addEventListener("click", (e) => {
+    const copyBtn = e.target.closest(".copy-btn");
+    if (copyBtn) {
+        e.preventDefault();
+        const songTitle = copyBtn.dataset.song;
+        navigator.clipboard.writeText(songTitle).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = "✓ 已複製";
+            setTimeout(() => { copyBtn.textContent = originalText; }, 1500);
+        }).catch(err => console.error("複製失敗:", err));
+    }
 });
 
 // ===== 初始化 =====
 function init() {
   createBubbles();
-  buildArtistButtons();
-  bindFilterButtons();
+  renderFilters();
   renderSongs();
   updateActiveFiltersLabel();
 }
