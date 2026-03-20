@@ -18,7 +18,7 @@ const songs = [
   { title: "戀愛ing", artist: "五月天", tags: ["中文", "全糖甜心", "五月天"] },
   { title: "Honey", artist: "郭書瑤", tags: ["中文", "全糖甜心", "郭書瑤"] },
   { title: "青春修煉手冊", artist: "TFBOYS", tags: ["中文", "全糖甜心", "TFBOYS"] },
-  { title: "love more", artist: "Bii 畢書盡", tags: ["中文", "全糖甜心", "Bii 畢書盡"] },
+  { title: "love more", artist: "畢書盡", tags: ["中文", "全糖甜心", "畢書盡"] },
   { title: "whatever", artist: "PiXXiE", tags: ["中文", "全糖甜心", "PiXXiE"] },
   { title: "不靈不靈", artist: "很美味", tags: ["中文", "全糖甜心", "很美味"] },
   { title: "有點甜", artist: "汪蘇瀧 / BY2", tags: ["中文", "全糖甜心", "汪蘇瀧", "BY2"] },
